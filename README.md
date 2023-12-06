@@ -14,9 +14,10 @@ Olá, Allan! Este é o seu manual passo a passo para utilizar o Painel Administr
 
 ## Acesso ao Painel
 
-1. Abra o navegador de sua preferência.
-2. Digite ou clique no link: https://allanfinal-505e9dc598f5.herokuapp.com/
-3. Aguarde a página carregar completamente.
+1. Gravar o áudio descritivo da sala. 
+2. Abra o navegador de sua preferência.
+3. Digite ou clique no link: https://allanfinal-505e9dc598f5.herokuapp.com/
+4. Aguarde a página carregar completamente.
 
 ## Entendendo a Página Inicial
 
