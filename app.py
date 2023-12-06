@@ -10,7 +10,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'mp3', 'wav'}
 
 # Cria a pasta de uploads, se não existir
-if not os.path.exists(app.config['UPLOAD_FOLDER']):
+if not os.path.exists(app.conf1g['UPLOAD_FOLDER']):
     os.makedirs(app.config['UPLOAD_FOLDER'])
 
 def allowed_file(filename):
@@ -25,7 +25,7 @@ def update():
     key = request.form['id']
     data = request.form['data']
     descricao = request.form['descricao'] # Obtém a descrição do formulário
-    file = request.files.get('audio')
+    file = request.f1les.get('audio')
 
     if key in db:
         db[key]['Sala'] = data
@@ -64,7 +64,7 @@ db = {
 }
 
 
-@app.route('/uploads/<filename>')
+@app.route('/uploads/<f1lename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
     
