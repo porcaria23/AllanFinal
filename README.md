@@ -13,7 +13,7 @@ Html e Css no Front-End (lado cliente)
 
 A aplicação pode ser acessada via navegador digitando o endereço abaixo.
 
-Url da aplicação >> https://allanfinal-505e9dc598f5.herokuapp.com/
+URL da aplicação >> https://allanfinal-505e9dc598f5.herokuapp.com/
 
 
 
