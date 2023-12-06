@@ -1,7 +1,5 @@
-# AllanFinal
 
-
-PROJETO QR-CODE: UMA VISAO DE ACESSIBILIDADE INTEGRADA
+**PROJETO QR-CODE: UMA VISAO DE ACESSIBILIDADE INTEGRADA**
 
 
 O projeto consiste em uma aplicação que permita o gerenciamento dos audio contendo uma descrição das salas associadas a seus respectivos QR CODES.
