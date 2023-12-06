@@ -1,0 +1,123 @@
+<style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #dfe7ee;
+            color: #1e1e1e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 5%;
+            background-color: #2e3c47;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #f1f1f1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #2e2e2e;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e1e1e;
+            color: #f1f1f1;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-container label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #f1f1f1;
+        }
+
+        .form-container input[type="text"], .form-container input[type="file"] {
+            padding: 10px;
+            border: 1px solid #2e2e2e;
+            background-color: #333;
+            color: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .blue-button, .red-button {
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .blue-button {
+            background-color: #003366;
+        }
+
+        .blue-button:hover {
+            background-color: #002244;
+        }
+
+        .red-button {
+            background-color: #660000;
+        }
+
+        .red-button:hover {
+            background-color: #440000;
+        }
+
+        /* Estilo para o botão de Alto Contraste */
+        .contrast-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 50px; 
+            height: 50px;
+            background-color: #FFF;
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .contrast-btn:hover {
+            background-color: #ddd;
+        }
+    </style>

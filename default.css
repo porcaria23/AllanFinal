@@ -1,0 +1,124 @@
+<style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(0, 0, 0); /* Fundo da tela preto */
+            color: rgb(253, 199, 0); /* Fontes em amarelo */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 5%;
+            background-color: rgb(3, 12, 30); /* Conteúdo do container em azul escuro */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            color: rgb(254, 255, 254); /* Fontes do container em branco */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: rgb(253, 199, 0); /* Títulos em amarelo */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid rgb(254, 255, 254); /* Borda das tabelas em branco */
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgb(3, 12, 30); /* Cabeçalho da tabela em azul escuro */
+            color: rgb(253, 199, 0); /* Fonte do cabeçalho em amarelo */
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-container label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: rgb(253, 199, 0); /* Fonte dos labels em amarelo */
+        }
+
+        .form-container input[type="text"], .form-container input[type="file"] {
+            padding: 10px;
+            border: 1px solid rgb(254, 255, 254); /* Borda dos inputs em branco */
+            background-color: rgb(3, 12, 30); /* Fundo dos inputs em azul escuro */
+            color: rgb(254, 255, 254); /* Fonte dos inputs em branco */
+            border-radius: 4px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .blue-button, .red-button {
+            border: none;
+            padding: 10px 20px;
+            color: rgb(0, 0, 0); /* Fonte dos botões em preto */
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .blue-button {
+            background-color: rgb(254, 255, 254); /* Fundo do botão azul em branco */
+        }
+
+        .blue-button:hover {
+            background-color: rgb(253, 199, 0); /* Hover do botão azul em amarelo */
+        }
+
+        .red-button {
+            background-color: rgb(254, 255, 254); /* Fundo do botão vermelho em branco */
+        }
+
+        .red-button:hover {
+            background-color: rgb(253, 199, 0); /* Hover do botão vermelho em amarelo */
+        }
+
+        /* Estilo para o botão de Alto Contraste */
+        .contrast-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(254, 255, 254); /* Fundo do botão de alto contraste em branco */
+            color: rgb(0, 0, 0); /* Fonte do botão de alto contraste em preto */
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .contrast-btn:hover {
+            background-color: rgb(253, 199, 0); /* Hover do botão de alto contraste em amarelo */
+        }
+    </style>

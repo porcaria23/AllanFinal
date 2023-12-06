@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allan</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(0, 0, 0); /* Fundo da tela preto */
+            color: rgb(253, 199, 0); /* Fontes em amarelo */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 5%;
+            background-color: rgb(3, 12, 30); /* Conteúdo do container em azul escuro */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            color: rgb(254, 255, 254); /* Fontes do container em branco */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: rgb(253, 199, 0); /* Títulos em amarelo */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            word-break: break-all; /* Quebra de linha para textos longos dentro das células */
+            border: 1px solid rgb(254, 255, 254); /* Borda das tabelas em branco */
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgb(3, 12, 30); /* Cabeçalho da tabela em azul escuro */
+            color: rgb(253, 199, 0); /* Fonte do cabeçalho em amarelo */
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-container label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: rgb(253, 199, 0); /* Fonte dos labels em amarelo */
+        }
+
+        .form-container input[type="text"], .form-container input[type="file"] {
+            padding: 10px;
+            border: 1px solid rgb(254, 255, 254); /* Borda dos inputs em branco */
+            background-color: rgb(3, 12, 30); /* Fundo dos inputs em azul escuro */
+            color: rgb(254, 255, 254); /* Fonte dos inputs em branco */
+            border-radius: 4px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .blue-button, .red-button {
+            border: none;
+            padding: 10px 20px;
+            color: rgb(0, 0, 0); /* Fonte dos botões em preto */
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .blue-button {
+            background-color: rgb(254, 255, 254); /* Fundo do botão azul em branco */
+        }
+
+        .blue-button:hover {
+            background-color: rgb(253, 199, 0); /* Hover do botão azul em amarelo */
+        }
+
+        .red-button {
+            background-color: rgb(254, 255, 254); /* Fundo do botão vermelho em branco */
+        }
+
+        .red-button:hover {
+            background-color: rgb(253, 199, 0); /* Hover do botão vermelho em amarelo */
+        }
+
+        /* Estilo para o botão de Alto Contraste */
+        .contrast-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(254, 255, 254); /* Fundo do botão de alto contraste em branco */
+            color: rgb(0, 0, 0); /* Fonte do botão de alto contraste em preto */
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .contrast-btn:hover {
+            background-color: rgb(253, 199, 0); /* Hover do botão de alto contraste em amarelo */
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <h1>QR CODE ACESSIBILIDADE</h1>
+        <table>
+            <!-- Cabeçalho da tabela com coluna adicional para Descrição -->
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Key</th>
+                    <th>Sala</th>
+                    <th>Descrição</th> <!-- Coluna de descrição adicionada -->
+                    <th>Audio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop para exibir os dados, incluindo a descrição -->
+                {% for id, row in database.items() %}
+                <tr>
+                    <td><input type="checkbox" class="rowCheckbox" name="rowCheckbox" data-id="{{ id }}"></td>
+                    <td>{{ id }}</td>
+                    <td>{{ row['Sala'] }}</td>
+                    <td>{{ row['Descrição'] }}</td> <!-- Exibindo a descrição -->
+                    <td>{{ row['Audio'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <form action="/update" method="post" enctype="multipart/form-data" id="dataForm">
+            <div class="form-container">
+                <label for="inputData">Dados da Sala:</label>
+                <input type="text" id="inputData" name="data">
+
+                <label for="inputDescricao">Descrição:</label> <!-- Campo adicional para Descrição -->
+                <input type="text" id="inputDescricao" name="descricao">
+
+                <label for="fileUpload">Arquivo de Áudio:</label>
+                <input type="file" id="fileUpload" name="audio" accept="audio/*">
+
+                <input type="hidden" id="rowId" name="id">
+
+                <div class="button-container">
+                    <button type="submit" class="blue-button">Adicionar/Atualizar</button>
+                    <button type="button" class="red-button" onclick="deleteData()">Deletar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(e) {
+            let selectedCheckbox = document.querySelector('input[name="rowCheckbox"]:checked');
+            if (selectedCheckbox) {
+                document.getElementById('rowId').value = selectedCheckbox.getAttribute('data-id');
+            } else {
+                alert('Por favor, selecione uma linha para adicionar ou atualizar.');
+                e.preventDefault();
+            }
+        });
+
+        function deleteData() {
+            let selectedCheckbox = document.querySelector('input[name="rowCheckbox"]:checked');
+            if (selectedCheckbox) {
+                let rowId = selectedCheckbox.getAttribute('data-id');
+                fetch(`/delete/${rowId}`, { method: 'DELETE' })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            window.location.reload();
+                        } else {
+                            alert('Erro ao deletar');
+                        }
+                    });
+            } else {
+                alert('Por favor, selecione uma linha para deletar.');
+            }
+        }
+    </script>
+</body>
+</html>
